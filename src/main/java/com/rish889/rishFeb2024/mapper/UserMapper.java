@@ -16,7 +16,7 @@ public class UserMapper {
 
     public static UserResponseDto convertDto(final User entity) {
         final UserResponseDto dto = UserResponseDto.builder()
-                .id(entity.getId())
+                .id(entity.getUserId())
                 .name(entity.getName())
                 .email(entity.getEmail())
                 .build();

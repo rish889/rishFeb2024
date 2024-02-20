@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @Column(name = "user_id")
+    private Long userId;
 
     private String name;
 
-    @Column(name = "email")
     private String email;
 }
