@@ -8,4 +8,6 @@ public interface UserService {
     User saveUser(final User user);
 
     List<User> fetchUsers();
+
+    User fetchUser(final Integer userId);
 }

@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public User saveUser(final User user) {
         if ("Error".equalsIgnoreCase(user.getName())) {
             throw new BadRequestException("invalid_username", "Username is not valid");
         }
@@ -36,5 +36,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> fetchUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public User fetchUser(final Integer userId) {
+        return userRepository.findById(userId).get();
     }
 }
