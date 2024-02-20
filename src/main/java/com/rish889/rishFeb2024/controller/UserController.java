@@ -7,6 +7,7 @@ import com.rish889.rishFeb2024.mapper.UserMapper;
 import com.rish889.rishFeb2024.model.User;
 import com.rish889.rishFeb2024.service.UserService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.NonNull;
@@ -35,7 +36,7 @@ public class UserController {
     }
 
     @GetMapping(ApiPaths.USER_BY_ID)
-    private ResponseEntity<UserResponseDto> fetchUser(@PathVariable @NotNull(message = "userId must not be blank") Integer userId) {
+    private ResponseEntity<UserResponseDto> fetchUser(@PathVariable Integer userId) {
         log.info("fetchUser(). userId : {}", userId);
         final User user = userService.fetchUser(userId);
         final UserResponseDto responseDto = UserMapper.convertDto(user);
