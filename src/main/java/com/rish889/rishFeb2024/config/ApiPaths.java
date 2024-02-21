@@ -5,4 +5,9 @@ public class ApiPaths {
     public static final String HEALTH_CHECK = API_V1 + "/health";
     public static final String USERS = API_V1 + "/users";
     public static final String USER_BY_ID = USERS + "/{userId}";
+
+    public static final String GAMES = API_V1 + "/games";
+    public static final String GAMES_BY_ID = USERS + "/{gameId}";
+
+    public static final String SHIPS = GAMES_BY_ID + "/ships";
 }
